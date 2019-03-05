@@ -65,7 +65,7 @@ $(document).ready(function () {
   $(".btn").on('click', function(){
     $(".btn").hide();
     $("#mainbox").append("<h1 id='logo'>Trivia Game</h1>");//show <h1>Trivia Game<h1>
-    $('#time').append('<h2>Time Remaining: <span id = "counterNumber">30</span>Seconds</h2>')//show Timer
+    $('#mainbox').append('<h2>Time Remaining: <span id = "counterNumber">30</span>Seconds</h2>')//show Timer
     game.newQuestion();
 
   })
@@ -92,18 +92,19 @@ $(document).ready(function () {
     //new question///////////////////////////////////////////////////////////////////////
     newQuestion: function(){
       timer = setInterval(game.timeCount, 1000);
+      $('#counterNumber').html(game.counter);
       $('.question').html('<h2>' + questions[this.currentQuestion].question + '</h2>')//display question
       console.log("in new question function");
       console.log(questions[this.currentQuestion].question);
       for (var i = 0; i < questions[this.currentQuestion].answers.length; i++){ //display choices
-        $('.question').append('<button type="button" class="btn btn-outline-primary" id="ansBtn"' + 'data-name="' + questions[this.currentQuestion].answers[i] + '">' + questions[this.currentQuestion].answers[i] + '</button>');
+        $('.answerList').append('<button type="button" class="btn btn-outline-primary" id="ansBtn"' + 'data-name="' + questions[this.currentQuestion].answers[i] + '">' + questions[this.currentQuestion].answers[i] + '</button>');
       }
-      $('#logo').hide()
+     
     },
     //next question//////////////////////////////////////////////////////////////////////
     nextQuestion: function(){
       game.counter = countNumber;
-      $("#counterNumber").html(game.counter);
+      $("#counterNumber").append(game.counter);
       game.currentQuestion++;
       game.newQuestion();
     },
@@ -112,15 +113,15 @@ $(document).ready(function () {
       console.log("timeup function")
       clearInterval(timer);
       $("#counterNumber").html(game.counter);
-      $("#mainbox").html("<h2>Time is up!!!</h2>");
-      $("#mainbox").append("<h3>The correct answer was :" + questions[this.currentQuestion].correctAnswer);
+      $("#time").html("<h2>Time is up!!!</h2>");
+      $(".question").append("<h3>The correct answer was :</h3>" + questions[this.currentQuestion].correctAnswer);
 
       if (game.currentQuestion === questions.length - 1){
-        setTimeout(game.results, 100);
+        setTimeout(game.results, 5000);
         console.log("if statement in timeup")
 
       }else {
-        setTimeout(game.nextQuestion, 1000)
+        setTimeout(game.nextQuestion, 5000)
         console.log("else statement in timeup")
       }
       
@@ -150,25 +151,25 @@ $(document).ready(function () {
   ansWrong: function(){
     clearInterval(timer);
     game.wrong++;
-    $("#mainbox").html('<h2>Wrong!</h2>');
+    $(".question").html('<h2>Wrong!</h2>');
     $('#mainbox').append('<h3>The Correct Answer was: ' + questions[game.currentQuestion].correctAnswer + '</h3>');
     if (game.currentQuestion === questions.length - 1){
-      setTimeout(game.results, 100);
+      setTimeout(game.results, 5000);
     }else {
-      setTimeout(game.nextQuestion, 100);
+      setTimeout(game.nextQuestion, 5000);
     }
   },
   ansRight: function(){
     clearInterval(timer);
     game.correct++;
-    $("#mainbox").html('<h2> Right!!!</h2>')
+    $(".question").html('<h2> Right!!!</h2>')
     
     if (game.currentQuestion === questions.length - 1) {
       console.log("if currentquestion=length if statement called")
-      setTimeout(game.results, 100);
+      setTimeout(game.results, 5000);
     }else {
       console.log("else currentquestion=length if statement called")
-      setTimeout(game.nextQuestion, 100);
+      setTimeout(game.nextQuestion, 2000);
     }
   },
   //reset function///////////////////////////////////////////////////////////////////////////////
