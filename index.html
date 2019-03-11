@@ -7,25 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="../TriviaGame/assets/style.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Dosis|Monoton" rel="stylesheet">    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 <div class="container">
     <div class="row">
-     <div class="colhead col-md-12">
-         <div id="mainbox">
-                <button type="button" class="btn btn-primary btn-lg btn-block">START</button>
-
-        <div class="questionBox">
-            <div id="time"></div>
+     <div id="mainbox" class="colhead col-md-12">
+        
+             <h2 id="welcome">WELCOME TO</h2>
+             <h1 id="logo">TRIVIA GAME</h1>
+                <button id="startBtn" type="button" class="btn btn-primary btn-lg btn-block">START</button>
+             <p id="instuctions">Press START to play</p>
+         <div id="time"></div>
          <div class="question"></div>
+         <div id="wrongBox"></div>
          <div class="answerList"></div>
          
+         <div id="resultsText">
+            
+             
+         
          </div>
-         <div id="correctAnswers"></div>
-         <div id="incorrectAnswers"></div>
-         <div id="unanswered"></div>
-         </div>
+      </div>   
      </div>
     </div>
 </div>
@@ -39,6 +42,7 @@
         
     
     
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script src="../TriviaGame/assets/game.js"></script>
 </body>
