@@ -14,26 +14,124 @@ body{
     text-align: center;
     color: white;
 }
-.questionText p{
+.question h2{
     color: white;
     text-align: center;
-    font-size: 25px;
+    font-size: 35px;
+    margin-top: 20px;
+    font-family: 'Dosis', sans-serif;
 }
 .answer{
     color: white;
     font-size: 30px;
     text-align: center;
+    font-family: 'Dosis', sans-serif;
 }
 .btn{
     background: transparent;
     border: 2px white solid;
     margin-top: 25%;
 }
-#questionBox{
-    color: white;
-}
+
 .choiceBtn{
     background: transparent;
     color: white;
     font-size: 30px;
+    font-family: 'Dosis', sans-serif;
+}
+#time h2{
+    color: white;
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+}
+#timeUp1{
+    text-align: center;
+    font-size: 50px;
+    padding-top: 10px;
+}
+#correctAns{
+    color: white;
+    padding-left: 35px;    
+    padding: 20px;
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+}
+
+#showAns{
+    color: thistle;
+    padding-left: 35px;
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+}
+#welcome{
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 60px;
+    font-family: 'Cabin', sans-serif;
+
+}
+#logo{
+    font-size: 70px;
+    font-family: 'Monoton', cursive;
+
+}
+#instuctions{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Cabin', sans-serif;
+
+}
+#startBtn{
+    margin-top: 50px;
+    font-family: 'Dosis', sans-serif;
+
+}
+
+
+#wrongFuncAns{
+    font-size: 50px;
+    font-family: 'Dosis', sans-serif;
+
+}
+#rightFuncAns{
+    font-size: 50px;
+    font-family: 'Dosis', sans-serif;
+
+}
+#ansBtn{
+    margin: 0;
+    font-size: 30px;
+    font-family: 'Dosis', sans-serif;
+
+}
+.answerList{
+    display: grid;
+    margin-top: 80px;
+    font-family: 'Dosis', sans-serif;
+
+    
+}
+#resultsText{
+    color: white;
+    font-size: 30px;
+    font-family: 'Cabin', sans-serif;
+    display: block;
+}
+
+#resultsText h2{
+    font-family: 'Cabin', sans-serif;
+    font-size: 40px;
+
+}
+#resultsText h3{
+    font-family: 'Cabin', sans-serif;
+    font-size: 40px;
+
+}
+#startAgain{
+    background: transparent;
+    color: white;
 }
